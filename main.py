@@ -6,10 +6,25 @@ from dotenv import load_dotenv
 load_dotenv()
 
 root_dir = os.getenv('ROOT_DIR')
-job_apps_dir = os.getenv('JOBAPPS_DIR')
-misc_dir = os.getenv('MISC_DIR')
 
-filter_words = os.getenv('FILTER_WORDS').split(',')
+try:
+    job_apps_dir = os.getenv('JOBAPPS_DIR')
+except:
+    print("JOBAPPS_DIR not found in .env file")
+    exit()
+
+try:
+    misc_dir = os.getenv('MISC_DIR')
+except:
+    print("MISC_DIR not found in .env file")
+    exit()
+
+try:
+    filter_words = os.getenv('FILTER_WORDS').split(',')
+except:
+    print("FILTER_WORDS not found in .env file")
+    exit()
+
 
 
 files = []
