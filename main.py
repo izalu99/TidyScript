@@ -1,8 +1,8 @@
-from json import load
+
 import os 
 from posixpath import basename
 from shutil import move
-from dotenv import load_dotenv, dotenv_values
+from dotenv import load_dotenv
 load_dotenv()
 
 root_dir = os.getenv('ROOT_DIR')
